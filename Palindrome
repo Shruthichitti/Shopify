@@ -1,0 +1,10 @@
+//Palindrome Checker
+
+const isPalindrome = (str) => {
+  //assigning given string to another variable by converting to lowercase and removing extra characters
+  var cleanStr = str.toLowerCase().replace(/[^A-Za-z0-9]/g, '');
+  //spliting the giving string and reversing it and joining and assigning the new string to a variable
+  var revStr = cleanStr.split('').reverse().join('');
+  //comparing the new staring and old string and returning true or false
+  return revStr == cleanStr;
+}
