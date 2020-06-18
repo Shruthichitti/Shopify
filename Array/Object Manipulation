@@ -1,0 +1,37 @@
+
+const products = [
+  {name: "Stainless 10\"", weight: 1.5, price: 65, size: 10, id: 12},
+  {name: "Stainless 12\"", weight: 1.8, price: 85, size: 12, id: 13},
+  {name: "Carbon Steel 10\"", weight: 1.5, price: 75, size: 10, id: 23},
+  {name: "Carbon Steel 12\"", weight: 1.95, price: 75, size: 12, id: 24},
+  {name: "Nonstick 10\"", weight: 2.0, price: 70, size: 10, id: 3},
+  {name: "Nonstick 12\"", weight: 2.0, price: 70, size: 12, id: 4}
+]
+//Returning array if price is greater than or equal to 75 
+var isGreater = products.filter(product =>{
+ if(product.price >= 75){
+   return [{name: product.name, weight: product.weight, price: product.price, size:product.size, id: product.id}];
+ }
+});
+
+//Returning array if weight is greater than 1.8
+var isHeavier = products.filter(product =>{
+ if(product.weight > 1.8){
+   return [{name: product.name, weight: product.weight, price: product.price, size:product.size, id: product.id}];
+ }
+});
+
+//Transforming array to Object by assiging id as key
+function arrayToObject(arr) {
+  output = {};
+  arr.forEach(function(item) {
+    var val=item.id;
+     delete item.id;
+    output[val] = item;
+  })
+  return output;
+}
+
+//console.log(isGreater);
+//console.log(isHeavier);
+//console.log(arrayToObject(products));
